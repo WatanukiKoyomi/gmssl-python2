@@ -35,10 +35,10 @@ class CryptSM2(object):
         Temp = Point
         flag = False
         for n in range(self.para_len * 4):
-            if (flag):
+            if flag:
                 Temp = self._double_point(Temp)
             if (k & mask) != 0:
-                if (flag):
+                if flag:
                     Temp = self._add_point(Temp, Point)
                 else:
                     flag = True
@@ -97,7 +97,7 @@ class CryptSM2(object):
         else:
             X1 = int(P1[0:self.para_len], 16)
             Y1 = int(P1[self.para_len:len_2], 16)
-            if (l1 == len_2):
+            if l1 == len_2:
                 Z1 = 1
             else:
                 Z1 = int(P1[len_2:], 16)
@@ -167,7 +167,7 @@ class CryptSM2(object):
             P1 = self._convert_jacb_to_nor(P1)
 
         x = int(P1[0:self.para_len], 16)
-        return (r == ((e + x) % int(self.ecc_table['n'], base=16)))
+        return r == ((e + x) % int(self.ecc_table['n'], base=16))
 
     def sign(self, data, K):  # 签名函数, data消息的hash，private_key私钥，K随机数，均为16进制字符串
         # E = data.hex()  # 消息转化为16进制字符串
