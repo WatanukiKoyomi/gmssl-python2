@@ -3,6 +3,8 @@ Original: https://github.com/duanhongyi/gmssl
 
 Now include sm9.
 
+此修改仅对于python2的适配，tests文件夹下的测试文件能通过测试
+
 GMSSL
 ========
 GmSSL是一个开源的加密包的python实现，支持SM2/SM3/SM4/SM9等国密(国家商用密码)算法、项目采用对商业应用友好的类BSD开源许可证，开源且可以用于闭源的商业应用。
