@@ -111,11 +111,9 @@ class CryptSM4(object):
                 self.sk[31 - idx] = t
 
     def one_round(self, sk, in_put):
-        print in_put
         for i in range(len(in_put)):
             if isinstance(in_put[i], str):
                 in_put[i] = ord(in_put[i])
-        print in_put
         out_put = []
         ulbuf = [0]*36
         ulbuf[0] = get_uint32_be(in_put[0:4])
